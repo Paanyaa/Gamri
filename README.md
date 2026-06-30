@@ -15,4 +15,4 @@ Step to install :
     
 -- This will create a new session entry point called Hyprland-gaming to load my rice.
 
-
+-- Note : hyprland.lua is configured for Nvidia only u need to manually change if u have AMD gpu.
