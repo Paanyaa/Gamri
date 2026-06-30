@@ -5,12 +5,12 @@ It doesn't have any lock screen (sry i want to keep it minimal).
 
 Step to install :
 
-    1. Clone repo :   
-    ```git clone https://github.com/Paanyaa/Gamri.git ~/.gaming/
+1. Clone repo :   
+    git clone https://github.com/Paanyaa/Gamri.git ~/.gaming/
     cd ~/.gaming
     chmod +x setup.sh
     ./setup.sh
-    ```
-    -- This will create a new session entry point called Hyprland-gaming to load my rice.
+    
+-- This will create a new session entry point called Hyprland-gaming to load my rice.
 
 
