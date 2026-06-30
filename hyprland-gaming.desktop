@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=Hyprland (Gaming)
+Comment=Hyprland with gaming profile
+Exec=Hyprland -c ~/.gaming/hyprland.lua
+Type=Application
