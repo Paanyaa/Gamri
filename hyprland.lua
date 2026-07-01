@@ -2,15 +2,11 @@
 -- Gaming profile — Nvidia + Intel hybrid, minimal
 
 -- ── Nvidia + Intel hybrid env vars ───────────────────────────────────────────
--- If u have Amd gpu update make changes in this section
+
 hl.env("GBM_BACKEND",                "nvidia-drm")
 hl.env("__GLX_VENDOR_LIBRARY_NAME",  "nvidia")
 hl.env("LIBVA_DRIVER_NAME",          "nvidia")
-hl.env("WLR_DRM_DEVICES",            "/dev/dri/card1:/dev/dri/card0") -- Nvidia first, Intel fallback
-hl.env("WLR_NO_HARDWARE_CURSORS",    "1")
-hl.env("NVD_BACKEND",                "direct")
-hl.env("__GL_GSYNC_ALLOWED",         "1")
-hl.env("__GL_VRR_ALLOWED",           "1")
+hl.env("AQ_DRM_DEVICES",            "/dev/dri/card1:/dev/dri/card0") -- Nvidia first, Intel fallback
 
 hl.env("XDG_SESSION_TYPE",             "wayland")
 hl.env("XDG_CURRENT_DESKTOP",          "Hyprland")
@@ -35,7 +31,7 @@ hl.monitor({
 -- ── Autostart ────────────────────────────────────────────────────────────────
 
 -- live wallpaper
--- hl.exec_cmd("systemctl --user start mpvpaper.service")
+hl.exec_cmd("systemctl --user start mpvpaper.service")
 -- ── Keybinds ─────────────────────────────────────────────────────────────────
 
 -- Terminal
@@ -63,7 +59,7 @@ hl.bind("SUPER + D", hl.dsp.exec_cmd("discord"))
 hl.bind("SUPER + CTRL + B", hl.dsp.exec_cmd("blueman-manager"))
 
 -- Live wallpaper
--- hl.bind("SUPER + W", hl.dsp.exec_cmd("~/.gaming/mpvpaper-toggle.sh"))
+hl.bind("SUPER + W", hl.dsp.exec_cmd("~/.gaming/mpvpaper-toggle.sh"))
 
 -- Fullscreen screenshot
 hl.bind("Print", hl.dsp.exec_cmd("grim ~/Pictures/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png"))
@@ -89,7 +85,7 @@ for i = 1, 5 do
   hl.window_rule({ match = { class = "firefox" }, workspace = 3, opacity=0.8})
 
 
--- Touch Pad
+-- Input 
 hl.config({
    input = {
 	kb_layout = "us",
@@ -107,3 +103,5 @@ hl.config({
    } 
 })
 end
+
+require("hyprland.env")
